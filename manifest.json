@@ -1,0 +1,20 @@
+{
+    "manifest_version": "1",
+    "api_version": "1",
+    "name": "Demo",
+    "description": "Demo extension",
+    "developer_name": "Aleksandr Gornostal",
+    "icon": "images/icon.png",
+    "options": {
+        "query_debounce": 0.05
+    },
+    "preferences": [
+        {
+            "id": "demo_kw",
+            "type": "keyword",
+            "name": "Demo",
+            "description": "Demo extension",
+            "default_value": "dm"
+        }
+    ]
+}
