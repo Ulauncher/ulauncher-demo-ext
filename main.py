@@ -1,3 +1,5 @@
+import json
+import logging
 from time import sleep
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
@@ -6,6 +8,8 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
+
+logger = logging.getLogger(__name__)
 
 
 class DemoExtension(Extension):
@@ -20,10 +24,12 @@ class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
         items = []
+        logger.info('preferences %s' % json.dumps(extension.preferences))
         for i in range(5):
-            data = {'new_name': 'Item %s was clicked' % i}
+            item_name = extension.preferences['item_name']
+            data = {'new_name': '%s %s was clicked' % (item_name, i)}
             items.append(ExtensionResultItem(icon='images/icon.png',
-                                             name='%s %s' % (extension.preferences['item_name'], i),
+                                             name='%s %s' % (item_name, i),
                                              description='Item description %s' % i,
                                              on_enter=ExtensionCustomAction(data, keep_app_open=True)))
 
