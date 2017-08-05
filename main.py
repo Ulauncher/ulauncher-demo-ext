@@ -26,7 +26,7 @@ class KeywordQueryEventListener(EventListener):
         for i in range(5):
             data = {'new_name': 'Item %s was clicked' % i}
             items.append(ExtensionResultItem(icon='images/icon.png',
-                                             name='%s %s' % (self.item_name, i),
+                                             name='%s %s' % (extension.item_name, i),
                                              description='Item description %s' % i,
                                              on_enter=ExtensionCustomAction(data, keep_app_open=True)))
 
