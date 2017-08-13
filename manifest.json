@@ -12,7 +12,7 @@
         {
             "id": "demo_kw",
             "type": "keyword",
-            "name": "Keyword",
+            "name": "Demo",
             "default_value": "dm"
         },
         {
