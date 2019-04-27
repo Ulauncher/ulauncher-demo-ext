@@ -1,5 +1,5 @@
 {
-  "required_api_version": "1",
+  "required_api_version": "^2.0.0",
   "name": "Demo",
   "description": "Demo extension",
   "developer_name": "Aleksandr Gornostal",
