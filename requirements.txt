@@ -1,2 +1,3 @@
 tabulate
+non-existent-package
 
